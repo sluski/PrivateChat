@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.sluski.controller.SettingsController">
+   <children>
+      <Label layoutX="37.0" layoutY="23.0" text="Enter connection properties" textAlignment="CENTER">
+         <font>
+            <Font name="Bookman Old Style" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="74.0" prefHeight="25.0" prefWidth="90.0" text="IP address:">
+         <font>
+            <Font name="Bookman Old Style" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="109.0" prefHeight="25.0" prefWidth="90.0" text="Port:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="addressFiled" layoutX="185.0" layoutY="74.0" />
+      <TextField fx:id="portField" layoutX="185.0" layoutY="109.0" />
+      <Button layoutX="254.0" layoutY="167.0" mnemonicParsing="false" onAction="#connect" prefHeight="40.0" prefWidth="110.0" text="Connect">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="37.0" layoutY="167.0" mnemonicParsing="false" onAction="#startServer" prefHeight="40.0" prefWidth="110.0" text="Run Server">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Text layoutX="191.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Label alignment="CENTER_RIGHT" layoutX="234.0" layoutY="228.0" prefHeight="17.0" prefWidth="156.0" text="przemysław.slupski.98@gmail.com">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="37.0" layoutY="150.0" prefHeight="17.0" prefWidth="110.0" text="Default on port 8189" textFill="#0000008b">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
