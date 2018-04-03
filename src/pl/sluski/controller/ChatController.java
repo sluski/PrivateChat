@@ -20,6 +20,13 @@ public class ChatController {
     @FXML
     private TextArea output;
     
+    public void initialize() {
+        output.setDisable(false);
+        output.setStyle("-fx-control-inner-background:#EAF6FF; -fx-font-family: Consolas;");
+        output.setText("Trying connect with " + clientManager.getAdress() + ":" + clientManager.getPort());
+        
+    }
+    
     public ChatController(){
         clientManager = new ClientManager();
     }

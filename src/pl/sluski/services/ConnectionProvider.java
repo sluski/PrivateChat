@@ -1,4 +1,4 @@
-package pl.sluski.model;
+package pl.sluski.services;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,6 +16,7 @@ public class ConnectionProvider {
     private static ServerSocket server;
     private static Scanner input;
     private static PrintWriter output;
+    private ServerCreator serverCreator;
 
     public void createConnection(String address, int port) {
         try {
@@ -31,6 +32,8 @@ public class ConnectionProvider {
         try {
             server = new ServerSocket(port);
         } catch (IOException ex){ }
+        Thread thread = new Thread(serverCreator);
+        thread.start();
     }
 
     public void stopServer() {
@@ -49,5 +52,24 @@ public class ConnectionProvider {
     public void send(String message) {
         output.println(message);
     }
+    
+    public void clientConnected(){
+        
+    }
 
+    public static ServerSocket getServer() {
+        return server;
+    }
+
+    public static void setServer(ServerSocket server) {
+        ConnectionProvider.server = server;
+    }
+
+    public static Socket getConnection() {
+        return connection;
+    }
+
+    public static void setConnection(Socket connection) {
+        ConnectionProvider.connection = connection;
+    }
 }

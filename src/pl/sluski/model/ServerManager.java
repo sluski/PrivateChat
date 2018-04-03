@@ -1,5 +1,7 @@
 package pl.sluski.model;
 
+import pl.sluski.services.ConnectionProvider;
+
 /**
  *
  * @author Sluski

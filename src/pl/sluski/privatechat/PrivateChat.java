@@ -17,7 +17,7 @@ public class PrivateChat extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Settings.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/pl/sluski/fxml/Settings.fxml"));
         Pane root = loader.load();
         Scene scene = new Scene(root);
         

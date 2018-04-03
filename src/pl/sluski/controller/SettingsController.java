@@ -55,7 +55,7 @@ public class SettingsController implements Initializable {
 
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Chat.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/pl/sluski/fxml/Chat.fxml"));
         Pane root = loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
