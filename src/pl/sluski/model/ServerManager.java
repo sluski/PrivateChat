@@ -1,20 +1,53 @@
 package pl.sluski.model;
 
-import pl.sluski.services.ConnectionProvider;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import pl.sluski.services.ConnectionManager;
 
 /**
  *
  * @author Sluski
  */
-public class ServerManager {
+public class ServerManager implements Runnable {
     
-    private final ConnectionProvider connectionProvider;
+    private static ServerSocket server;
+    private static ServerManager instance;
+    private static Thread thread;
+    private static int port;
+    private Socket connection;
     
-    public ServerManager(){
-        connectionProvider = new ConnectionProvider();
+    private ServerManager(int port){
+        ServerManager.port = port;
+        
     }
     
-    public void startServer(int port){
-        connectionProvider.startServer(port);
+    public static ServerManager getInstance(int port){
+        if(instance == null){
+            instance = new ServerManager(port);
+        }
+        thread = new Thread(instance);
+        thread.start();
+        return instance;
     }
+    
+    @Override
+    public void run() {
+        try{
+        server = new ServerSocket(port);
+        connection = server.accept();
+        ConnectionManager.setConnection(connection);
+        }catch(IOException ex) { }
+        
+    }
+
+    public Socket getConnection() {
+        return connection;
+    }
+    
+    public static Thread getThread(){
+        return thread;
+    }
+    
+    
 }

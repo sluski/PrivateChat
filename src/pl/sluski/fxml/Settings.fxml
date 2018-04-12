@@ -31,7 +31,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="37.0" layoutY="167.0" mnemonicParsing="false" onAction="#startServer" prefHeight="40.0" prefWidth="110.0" text="Run Server">
+      <Button fx:id="serverButton" layoutX="37.0" layoutY="167.0" mnemonicParsing="false" onAction="#startServer" prefHeight="40.0" prefWidth="110.0" text="Run Server">
          <font>
             <Font size="15.0" />
          </font></Button>

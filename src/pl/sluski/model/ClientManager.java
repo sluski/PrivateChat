@@ -1,18 +1,18 @@
 package pl.sluski.model;
 
-import pl.sluski.services.ConnectionProvider;
+import pl.sluski.services.ConnectionManager;
 
 /**
  *
  * @author Sluski
  */
 public class ClientManager {
-    private final ConnectionProvider connectionProvider;
+    private final ConnectionManager connectionProvider;
     private String adress;
     private int port;
     
     public ClientManager(){
-        connectionProvider = new ConnectionProvider();
+        connectionProvider = new ConnectionManager();
         adress = "";
         port = 0;
     }
@@ -34,6 +34,4 @@ public class ClientManager {
     public int getPort() {
         return port;
     }
-    
-    
 }
